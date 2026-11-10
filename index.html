@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>John Gabriel Urbano - Full-stack engineer and game developer</title>
-<meta name="description" content="Full-stack engineer and game developer. 10 years, two games on Steam, four apps on Google Play, and AI agents that test what I build. Remote for US companies since 2022.">
+<meta name="description" content="Full-stack engineer and game developer. 10 years, four games on Steam, ten apps shipped, and AI agents that test what I build. Remote for US companies since 2022.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gaburbano.github.io/">
 <meta property="og:title" content="John Gabriel Urbano - Full-stack engineer and game developer">
@@ -145,7 +145,7 @@ a { color: inherit; }
 .ex-body { margin-top: clamp(26px, 4vw, 48px); }
 
 /* A: the stack, drawn as bunker levels */
-.stackgrid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(18px, 3vw, 40px); align-items: start; }
+.stackgrid { margin-top: clamp(18px, 3vw, 34px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(18px, 3vw, 40px); align-items: start; }
 .dig { padding: 0 14px 16px; background: #4a3d2c var(--grain); border: 2px solid var(--outline); border-radius: 7px; box-shadow: 0 5px 0 rgba(0, 0, 0, 0.42); }
 .dig .sky { margin: 0 -14px; padding: 12px 16px 10px; background: #5f7d3a var(--grain); border-bottom: 2px solid var(--outline); border-radius: 5px 5px 0 0; color: #f3f6df; font-weight: 700; }
 .level { display: grid; grid-template-columns: 5.6em 1fr; gap: 12px; margin-top: 14px; align-items: stretch; }
@@ -159,14 +159,14 @@ a { color: inherit; }
 .apps .inner { padding: 14px 14px 0; }
 .apps h3 { font: 400 1.5rem var(--stencil); text-transform: uppercase; letter-spacing: 0.03em; }
 .apps .sub { margin-top: 2px; color: var(--ink-soft); font-weight: 600; font-size: 1.02rem; }
-.applist { margin-top: 12px; display: grid; gap: 9px; }
+.applist { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
 .app { display: grid; grid-template-columns: 62px 1fr; gap: 13px; align-items: center; padding: 9px 11px; background: var(--putty-light); border: 1.5px solid #bdb294; border-radius: 6px; text-decoration: none; }
-.app:hover { border-color: var(--outline); background: #fff; }
+a.app:hover { border-color: var(--outline); background: #fff; }
 .app img { width: 62px; height: 62px; border-radius: 14px; border: 2px solid var(--outline); }
 .app b { display: block; font-weight: 800; font-size: 1.2rem; line-height: 1.15; }
 .app span { display: block; line-height: 1.3; font-size: 1.02rem; }
 .app small { display: block; margin-top: 2px; font: 800 0.72rem var(--ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
-.memo { margin-top: clamp(18px, 3vw, 34px); padding: clamp(18px, 2.4vw, 30px); transform: rotate(0.35deg); border-radius: 3px; max-width: 60em; }
+.memo { padding: clamp(18px, 2.4vw, 30px); transform: rotate(0.35deg); border-radius: 3px; }
 .memo h3 { font: 800 0.86rem var(--ui); letter-spacing: 0.12em; text-transform: uppercase; color: var(--alarm); }
 .memo p { margin-top: 10px; }
 
@@ -274,7 +274,7 @@ a { color: inherit; }
   .cp-head .brief { margin-left: 0; flex-basis: 100%; }
 }
 @media (max-width: 880px) {
-  .stackgrid, .agentgrid, .lower, .game, .older { grid-template-columns: minmax(0, 1fr); }
+  .stackgrid, .agentgrid, .lower, .game, .older, .applist { grid-template-columns: minmax(0, 1fr); }
   .game.flip .prints { order: 0; }
   .ledger thead { display: none; }
   .ledger tr { display: block; padding-block: 14px; border-bottom: 1px dashed #c9bfa6; }
@@ -327,8 +327,8 @@ a { color: inherit; }
     <a class="led" href="https://store.steampowered.com/app/5493880/" title="Home Sweet Bunker on Steam"><small id="ledLabel">My next game is out in</small><b id="countdown">-- --:--:--</b></a>
     <ul class="res" aria-label="The short version">
       <li>Years <b>10</b></li>
-      <li>Steam games <b>2</b></li>
-      <li>Store apps <b>4</b></li>
+      <li>Steam games <b>4</b></li>
+      <li>Apps shipped <b>10</b></li>
       <li>Tests passing <b>1,148</b></li>
     </ul>
   </div>
@@ -380,9 +380,9 @@ a { color: inherit; }
           </dl>
           <p class="find-h">Findings</p>
           <ul class="findings typed">
-            <li>Four mobile apps on Google Play, with subscriptions, ads and analytics behind them.</li>
+            <li>Ten apps and mobile games shipped to the app stores.</li>
             <li>Backend work going back to 2017: a payment API and CRM systems.</li>
-            <li>Two games on Steam. A third comes out on November 15.</li>
+            <li>Four games on Steam: two released, two on the way.</li>
             <li>Runs AI agents that play the games and file the bug reports.</li>
             <li>Wrote code by hand for years before any of that. Still reads every diff.</li>
           </ul>
@@ -439,7 +439,27 @@ a { color: inherit; }
       <h2>The full stack, dug level by level</h2>
       <p>In my game you build a bunker downward, one level at a time. My work stacks the same way, from the screen people touch down to the release pipeline.</p>
     </header>
-    <div class="ex-body stackgrid">
+    <div class="ex-body panel apps">
+        <div class="stripe"></div>
+        <div class="inner">
+          <h3>Apps I shipped</h3>
+          <p class="sub">Ten apps and mobile games. Each card says who I built it for.</p>
+          <div class="applist">
+            <a class="app" href="https://play.google.com/store/apps/details?id=com.appmachina.loterialoca"><img src="https://play-lh.googleusercontent.com/q_W_jTL5bw4icZDk_2Bp0bFezoE23Mfo-3RaVgfPDYxZiAVbtPkMeFoOZ7HTMPJIwKFT0K3MvrH9XgjFn6UKWA=s192" width="62" height="62" loading="lazy" alt=""><span><b>Loteria Loca</b><span>The Mexican card game Lotería, with bilingual voice calls.</span><small>Layers AI. Google Play. 50K+ downloads</small></span></a>
+            <a class="app" href="https://play.google.com/store/apps/details?id=com.appmachina.lotoloco"><img src="https://play-lh.googleusercontent.com/ZHurc6UgiJToilSmCdzITdTyDDZC6caUtsTXUEYVcBqqFuk5yiuzyxPDIk1j9FMa2h7jw2ZzDBgwwJ0kzXiOJRE=s192" width="62" height="62" loading="lazy" alt=""><span><b>LotoLoco: Lotería Bingo</b><span>Lotería with card powers, a weekly tournament and seasons.</span><small>Layers AI. Google Play. 10K+ downloads</small></span></a>
+            <a class="app" href="https://play.google.com/store/apps/details?id=xyz.tenxv.roma"><img src="https://play-lh.googleusercontent.com/j5X9ITZ2eHjfwx8QfU_tqokUuWYCnx1RKx5G-IOdwZfNkYQIzRUDrBvncc9N_WUnLh16QUGx6guJLx1LNY8Z-Q=s192" width="62" height="62" loading="lazy" alt=""><span><b>Roma: Romance Novels</b><span>A reading app for serialized romance novels.</span><small>Layers AI. Google Play. 10K+ downloads</small></span></a>
+            <a class="app" href="https://play.google.com/store/apps/details?id=com.appmachina.tappy"><img src="https://play-lh.googleusercontent.com/3GlAMkTk6ds-q-FFAkxKcnUDFqI0dmq5T9o9oqna4Dvb7Cd7WeSZRPoLeeba5ZONH-2bADrMKciLXOkkHEyTLqU=s192" width="62" height="62" loading="lazy" alt=""><span><b>EFTappy: EFT Tapping</b><span>Short guided tapping sessions led by a small companion.</span><small>Layers AI. Google Play</small></span></a>
+            <a class="app" href="https://apps.apple.com/us/app/girl-math-budget-justify/id6756024650"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2e/54/c9/2e54c959-50ac-decb-46fc-f12a73f383b3/AppIcon-0-0-1x_U007epad-0-1-85-220.png/192x192bb.jpg" width="62" height="62" loading="lazy" alt=""><span><b>Girl Math: Budget &amp; Justify</b><span>A budgeting and spending tracker with cost-per-wear math.</span><small>iPhone. App Store</small></span></a>
+            <a class="app" href="https://play.google.com/store/apps/details?id=com.phygtl.vyry"><img src="https://play-lh.googleusercontent.com/VHy7PLY5INlkRE56aCSQGDOD7kSnE_EJ-mwXoyO1DrZ_y1j6IFCNLNg-WjJm4ZVgxxcRqqrQbsRxSsxpEcvlFIM=s192" width="62" height="62" loading="lazy" alt=""><span><b>Vyry</b><span>An AR social app where quests end at real places.</span><small>Phygtl. Google Play and App Store</small></span></a>
+            <a class="app" href="https://loteria-legends.en.softonic.com/android"><img src="assets/apps/loteria-legends.jpg" width="62" height="62" loading="lazy" alt=""><span><b>Loteria Legends</b><span>A modern, social take on Mexican bingo.</span><small>Flywater Games. Lead developer</small></span></a>
+            <div class="app"><img src="assets/apps/word-wobble.jpg" width="62" height="62" loading="lazy" alt=""><span><b>Word Wobble: Lexicon Legends</b><span>Build towers of words that must not topple.</span><small>Flywater Games. Lead developer</small></span></div>
+            <div class="app"><img src="assets/apps/coloring-book.jpg" width="62" height="62" loading="lazy" alt=""><span><b>Coloring Book For Kids: Animals</b><span>Animal coloring pages for young kids.</span><small>My own. Solo developer</small></span></div>
+            <div class="app"><img src="assets/apps/find-the-difference.jpg" width="62" height="62" loading="lazy" alt=""><span><b>Find The Difference</b><span>Spot-the-difference puzzles that work offline.</span><small>My own. Solo developer</small></span></div>
+          </div>
+        </div>
+      </div>
+
+    <div class="stackgrid">
       <div class="dig">
         <p class="sky">Ground level. Everything below is mine to build and run.</p>
         <div class="level"><span class="tag">Surface</span><div class="room"><h3>What people touch</h3><p>React Native and Expo apps, Next.js and Angular on the web, Flutter, Unity.</p><p class="proof">Layers AI: iOS and Android apps from prototype to weekly releases.</p></div></div>
@@ -450,37 +470,11 @@ a { color: inherit; }
         <div class="level"><span class="tag">B5</span><div class="room"><h3>Release</h3><p>GitHub Actions with self-hosted runners, scripted App Store Connect and Google Play releases, Sentry.</p><p class="proof">Layers AI: 40+ builds in one month, in three languages.</p></div></div>
       </div>
 
-      <div class="panel apps">
-        <div class="stripe"></div>
-        <div class="inner">
-          <h3>Apps I shipped</h3>
-          <p class="sub">Built at Layers AI. All four are live on Google Play.</p>
-          <div class="applist">
-            <a class="app" href="https://play.google.com/store/apps/details?id=com.appmachina.loterialoca">
-              <img src="https://play-lh.googleusercontent.com/q_W_jTL5bw4icZDk_2Bp0bFezoE23Mfo-3RaVgfPDYxZiAVbtPkMeFoOZ7HTMPJIwKFT0K3MvrH9XgjFn6UKWA=s192" width="62" height="62" loading="lazy" alt="">
-              <span><b>Loteria Loca</b><span>The Mexican card game Lotería, with bilingual voice calls.</span><small>Game. 50K+ downloads</small></span>
-            </a>
-            <a class="app" href="https://play.google.com/store/apps/details?id=com.appmachina.lotoloco">
-              <img src="https://play-lh.googleusercontent.com/ZHurc6UgiJToilSmCdzITdTyDDZC6caUtsTXUEYVcBqqFuk5yiuzyxPDIk1j9FMa2h7jw2ZzDBgwwJ0kzXiOJRE=s192" width="62" height="62" loading="lazy" alt="">
-              <span><b>LotoLoco: Lotería Bingo</b><span>Lotería with card powers, a weekly tournament and seasons.</span><small>Game. 10K+ downloads</small></span>
-            </a>
-            <a class="app" href="https://play.google.com/store/apps/details?id=xyz.tenxv.roma">
-              <img src="https://play-lh.googleusercontent.com/j5X9ITZ2eHjfwx8QfU_tqokUuWYCnx1RKx5G-IOdwZfNkYQIzRUDrBvncc9N_WUnLh16QUGx6guJLx1LNY8Z-Q=s192" width="62" height="62" loading="lazy" alt="">
-              <span><b>Roma: Romance Novels</b><span>A reading app for serialized romance novels.</span><small>Books. 10K+ downloads</small></span>
-            </a>
-            <a class="app" href="https://play.google.com/store/apps/details?id=com.appmachina.tappy">
-              <img src="https://play-lh.googleusercontent.com/3GlAMkTk6ds-q-FFAkxKcnUDFqI0dmq5T9o9oqna4Dvb7Cd7WeSZRPoLeeba5ZONH-2bADrMKciLXOkkHEyTLqU=s192" width="62" height="62" loading="lazy" alt="">
-              <span><b>EFTappy: EFT Tapping</b><span>Short guided tapping sessions led by a small companion.</span><small>Health and fitness</small></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="paper memo typed">
+      <div class="paper memo typed">
       <h3>Note from the engineer</h3>
       <p>At Layers AI I took apps like these from a prototype to weekly store releases. One was a live Unity game that I ported to React Native: I rewrote its engine in TypeScript, wrote tests that proved it matched the original, and moved the existing players over. I built the subscriptions and paywalls, the rewarded ads, the in-game economies and the dashboards that showed what was working.</p>
       <p>My first three years were business software at TORO Cloud: CRM systems, a payment API and automations for the operations team. So I'm as comfortable in a database and an API as I am in a game engine.</p>
+    </div>
     </div>
   </div>
 </section>
@@ -650,7 +644,7 @@ a { color: inherit; }
           <tr><td>2025-26</td><td><b>Layers AI</b><span>Senior Full Stack Engineer. San Francisco, remote</span></td><td>Took iOS and Android games and apps from prototype to weekly store releases. Ported a live Unity game to React Native. Shipped 40+ builds in one month and built the subscriptions, paywall experiments and retention dashboards.</td></tr>
           <tr><td>2025-26</td><td><b>Podcrash</b><span>Senior Full Stack Engineer. England, remote</span></td><td>Worked on two unreleased Unity games with a team spread across time zones: a multiplayer tank battle game and a management sim about a fish and chips shop.</td></tr>
           <tr><td>2024-25</td><td><b>Phygtl</b><span>Senior Unity Engineer. Palo Alto, remote</span></td><td>Helped build and ship Vyry, an AR social app on the App Store and Google Play: a Flutter app with Unity AR scenes inside it, on a Firebase backend. Worked directly with the CEO on product direction.</td></tr>
-          <tr><td>2023-24</td><td><b>Flywater Games</b><span>Senior Unity Game Developer. Los Angeles, remote</span></td><td>Led development of two mobile games, World Wobble and Loteria Legends, and designed a reusable base that cut the setup time for later games.</td></tr>
+          <tr><td>2023-24</td><td><b>Flywater Games</b><span>Senior Unity Game Developer. Los Angeles, remote</span></td><td>Led development of two mobile games, Word Wobble and Loteria Legends, and designed a reusable base that cut the setup time for later games.</td></tr>
           <tr><td>2022-24</td><td><b>Mega Cat Studios</b><span>Unity Game Developer. Pittsburgh, remote</span></td><td>Worked on the new Backyard Baseball for PC, PlayStation, Xbox and Nintendo Switch: gameplay, UI and input across its modes, and the lobby and match flow for multiplayer. Also worked on WrestleQuest.</td></tr>
           <tr><td>2017-19</td><td><b>TORO Cloud</b><span>Software Engineer. Clark, Philippines</span></td><td>Built CRM systems for the sales and marketing teams, a single payment API in front of several payment providers, and automations for repetitive business operations.</td></tr>
         </tbody>
@@ -745,7 +739,7 @@ a { color: inherit; }
   });
   $('turnaway').addEventListener('click', function () {
     stamp('Turned away', 'alarm');
-    quote.textContent = '"I\'ll be up the road with two Steam games and four apps. Undo is right there."';
+    quote.textContent = '"I\'ll be up the road with four Steam games and ten apps. Undo is right there."';
     undo.hidden = false;
   });
   undo.addEventListener('click', function () {
