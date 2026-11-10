@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Gabriel Urbano - Software Engineer</title>
+<meta name="description" content="I build simulation games, mobile apps and the AI agents that test them. 10 years in Unity, TypeScript and backend systems. Remote for US companies since 2022.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gaburbano.github.io/">
+<meta property="og:title" content="John Gabriel Urbano - Software Engineer">
+<meta property="og:description" content="I build simulation games, mobile apps and the AI agents that test them.">
+<meta property="og:image" content="https://gaburbano.github.io/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231e3cf0'/%3E%3Crect x='14' y='40' width='36' height='10' fill='%23ffd400'/%3E%3Crect x='14' y='14' width='10' height='22' fill='%23fff'/%3E%3Crect x='28' y='22' width='10' height='14' fill='%23fff'/%3E%3Crect x='42' y='14' width='8' height='22' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4f6fa;
+  --ink: #0f1a3c;
+  --cobalt: #1e3cf0;
+  --signal: #ffd400;
+  --mist: #d9dfec;
+  --slate: #55607c;
+  --gutter: clamp(20px, 5vw, 56px);
+  --step--1: 0.9rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.333rem;
+  --step-2: 1.777rem;
+  --step-3: 2.369rem;
+  --step-4: 3.157rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-optical-sizing: auto;
+  font-size: var(--step-0);
+  line-height: 1.55;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+::selection { background: var(--signal); color: var(--ink); }
+a { color: inherit; text-decoration-color: var(--cobalt); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-color: var(--signal); }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(1200px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+
+/* Hero: the one loud place on the page */
+.hero {
+  --overlap: clamp(64px, 13vw, 190px);
+  color: #fff;
+  background:
+    linear-gradient(var(--cobalt), var(--cobalt)) top / 100% calc(100% - var(--overlap)) no-repeat,
+    var(--paper);
+}
+.topbar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px; padding-block: 28px; }
+.topbar .me { font-weight: 700; font-size: var(--step-1); text-decoration: none; letter-spacing: -0.01em; }
+.topbar ul { display: flex; flex-wrap: wrap; gap: 6px 28px; }
+.topbar ul a { text-decoration-color: transparent; font-weight: 500; }
+.topbar ul a:hover { text-decoration-color: var(--signal); }
+.hero h1 {
+  margin-top: clamp(28px, 6vw, 88px);
+  font-size: clamp(2.55rem, 6.3vw + 0.4rem, 6.4rem);
+  font-weight: 700;
+  font-stretch: 78%;
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.hero .lede { margin-top: clamp(22px, 3vw, 36px); max-width: 44em; font-size: clamp(1.1rem, 1vw + 0.85rem, 1.42rem); line-height: 1.45; color: #eef1ff; }
+.hero .lede { max-width: 34em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 6px; font-weight: 600; text-decoration: none; border: 2px solid transparent; }
+.btn.solid { background: #fff; color: var(--cobalt); }
+.btn.solid:hover { background: var(--signal); color: var(--ink); }
+.btn.line { border-color: rgba(255, 255, 255, 0.55); color: #fff; }
+.btn.line:hover { border-color: var(--signal); }
+.hero figure { margin-top: clamp(40px, 6vw, 80px); }
+.hero video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; background: var(--ink); box-shadow: clamp(8px, 1.4vw, 18px) clamp(8px, 1.4vw, 18px) 0 var(--signal); }
+.hero figcaption { margin-top: 30px; padding-bottom: 8px; color: var(--slate); font-size: var(--step--1); }
+
+/* Sections */
+.section { padding-top: clamp(72px, 10vw, 150px); }
+.section > .wrap > h2 { font-size: clamp(2rem, 3.4vw + 0.9rem, var(--step-4)); font-weight: 700; font-stretch: 85%; line-height: 1.02; letter-spacing: -0.02em; max-width: 18em; text-wrap: balance; }
+.section > .wrap > .intro { margin-top: 18px; max-width: 36em; font-size: var(--step-1); line-height: 1.45; color: var(--slate); }
+
+/* Games */
+.game { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(24px, 4vw, 64px); align-items: center; margin-top: clamp(56px, 8vw, 110px); }
+.game .shots { grid-column: 1 / span 7; grid-row: 1; position: relative; margin-bottom: 8%; }
+.game .words { grid-column: 8 / span 5; grid-row: 1; }
+.game.flip .shots { grid-column: 6 / span 7; }
+.game.flip .words { grid-column: 1 / span 5; }
+.shots img { border-radius: 8px; outline: 1px solid rgba(15, 26, 60, 0.14); outline-offset: -1px; }
+.shots .main { width: 100%; }
+.shots .inset { position: absolute; width: 46%; right: -5%; bottom: -14%; border: 6px solid var(--paper); border-radius: 12px; outline: none; }
+.game.flip .shots .inset { right: auto; left: -5%; }
+.status { display: inline-block; padding: 3px 10px; border-radius: 4px; background: var(--signal); font-size: var(--step--1); font-weight: 600; }
+.status.quiet { background: var(--mist); }
+.game h3 { margin-top: 14px; font-size: clamp(1.6rem, 1.6vw + 1rem, var(--step-3)); font-weight: 700; font-stretch: 88%; line-height: 1.05; letter-spacing: -0.015em; }
+.game .what { margin-top: 14px; }
+.points { margin-top: 18px; display: grid; gap: 8px; }
+.points li { position: relative; padding-left: 20px; }
+.points li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 3px; background: var(--cobalt); }
+.meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--mist); display: grid; gap: 6px; font-size: var(--step--1); }
+.meta div { display: grid; grid-template-columns: 6.2em 1fr; gap: 12px; }
+.meta dt { color: var(--slate); }
+.more { margin-top: 18px; font-weight: 600; }
+
+.earlier { margin-top: clamp(72px, 9vw, 120px); padding-top: 36px; border-top: 1px solid var(--mist); }
+.earlier h3 { font-size: var(--step-2); font-weight: 700; font-stretch: 88%; letter-spacing: -0.01em; }
+.earlier .pair { margin-top: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(24px, 4vw, 64px); }
+.earlier article { display: grid; grid-template-columns: minmax(0, 230px) 1fr; gap: 20px; align-items: start; }
+.earlier img { border-radius: 6px; width: 100%; }
+.earlier h4 { margin-top: 10px; font-size: var(--step-1); font-weight: 700; line-height: 1.15; }
+.earlier p { margin-top: 8px; }
+
+/* AI systems */
+.split { margin-top: clamp(44px, 6vw, 80px); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(28px, 4vw, 64px); align-items: start; }
+.split > *, .trio > *, .proof > * { min-width: 0; }
+.split h3, .trio h3, .proof h3 { font-size: var(--step-2); font-weight: 700; font-stretch: 88%; line-height: 1.1; letter-spacing: -0.01em; }
+.split p { margin-top: 14px; }
+.term { background: var(--ink); color: #dfe6ff; border-radius: 10px; padding: clamp(18px, 2.4vw, 30px); overflow-x: auto; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.84rem; line-height: 1.75; }
+.term pre { margin: 0; font: inherit; white-space: pre; }
+.term .p { color: var(--signal); }
+.term .c { color: #93a0cc; }
+.term-note { margin-top: 12px; font-size: var(--step--1); color: var(--slate); }
+.loop { margin-top: clamp(36px, 5vw, 60px); display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: none; }
+.loop li { position: relative; padding: 20px 22px 22px; border: 2px solid var(--ink); background: #fff; }
+.loop li + li { border-left: 0; }
+.loop li:first-child { border-radius: 10px 0 0 10px; }
+.loop li:last-child { border-radius: 0 10px 10px 0; }
+.loop strong { display: block; font-size: var(--step-1); font-weight: 700; line-height: 1.2; }
+.loop span { display: block; margin-top: 6px; font-size: var(--step--1); color: var(--slate); }
+.loop li + li::before { content: ""; position: absolute; left: -9px; top: 26px; width: 16px; height: 16px; background: var(--signal); border: 2px solid var(--ink); transform: rotate(45deg); }
+.loop-note { margin-top: 12px; font-size: var(--step--1); color: var(--slate); }
+.trio { margin-top: clamp(56px, 7vw, 96px); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 3.4vw, 48px); }
+.trio article { padding-top: 20px; border-top: 3px solid var(--ink); }
+.trio p { margin-top: 12px; }
+.proof { margin-top: clamp(56px, 7vw, 96px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 64px); }
+.proof p { margin-top: 14px; }
+.proof .points { margin-top: 14px; }
+
+/* Client work */
+.jobs { margin-top: clamp(36px, 5vw, 64px); }
+.jobs li { display: grid; grid-template-columns: 7.5em minmax(0, 4fr) minmax(0, 7fr); gap: 8px clamp(20px, 3vw, 48px); padding-block: 26px; border-top: 1px solid var(--mist); }
+.jobs li:last-child { border-bottom: 1px solid var(--mist); }
+.jobs .years { color: var(--slate); font-variant-numeric: tabular-nums; }
+.jobs h3 { font-size: var(--step-1); font-weight: 700; line-height: 1.2; }
+.jobs .role { margin-top: 4px; color: var(--slate); font-size: var(--step--1); }
+
+/* Stack */
+.stack { margin-top: clamp(36px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 28px clamp(24px, 3vw, 48px); }
+@media (min-width: 1100px) { .stack { grid-template-columns: repeat(5, 1fr); } }
+.stack dt { font-weight: 700; font-size: var(--step-1); line-height: 1.2; }
+.stack dd { margin-top: 8px; color: var(--slate); }
+
+/* Contact */
+.contact { margin-top: clamp(80px, 11vw, 160px); background: var(--cobalt); color: #fff; padding-block: clamp(56px, 8vw, 110px); }
+.contact h2 { font-size: clamp(2rem, 3.6vw + 0.9rem, 3.6rem); font-weight: 700; font-stretch: 82%; line-height: 1; letter-spacing: -0.02em; max-width: 14em; text-wrap: balance; }
+.contact p { margin-top: 18px; max-width: 34em; font-size: var(--step-1); line-height: 1.45; color: #eef1ff; }
+.foot { padding-block: 26px; font-size: var(--step--1); color: var(--slate); }
+
+@media (max-width: 880px) {
+  .game, .game.flip { display: block; }
+  .game .shots { margin-bottom: 0; }
+  .shots .inset, .game.flip .shots .inset { position: static; width: 72%; margin: -9% 0 0 auto; }
+  .game.flip .shots .inset { margin: -9% auto 0 0; }
+  .game .words { margin-top: 26px; }
+  .earlier .pair, .split, .trio, .proof { grid-template-columns: 1fr; }
+  .loop { grid-template-columns: 1fr; }
+  .loop li + li { border-left: 2px solid var(--ink); border-top: 0; }
+  .loop li:first-child { border-radius: 10px 10px 0 0; }
+  .loop li:last-child { border-radius: 0 0 10px 10px; }
+  .loop li + li::before { left: 26px; top: -9px; }
+  .jobs li { grid-template-columns: 1fr; gap: 6px; }
+}
+@media (max-width: 520px) {
+  .earlier article { grid-template-columns: 1fr; }
+  .meta div { grid-template-columns: 1fr; gap: 0; }
+  .term { font-size: 0.76rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="topbar" aria-label="Sections">
+      <a class="me" href="#top">John Gabriel Urbano</a>
+      <ul>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#ai">AI systems</a></li>
+        <li><a href="#clients">Client work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <h1 id="top">I build simulation games, mobile apps and the AI agents that test them.</h1>
+    <p class="lede">I'm a senior engineer with 10 years in Unity, TypeScript and backend systems. Two of my games are on Steam and the next one comes out on November 15. I've worked remotely for US companies since 2022, from the Philippines.</p>
+    <div class="actions">
+      <a class="btn solid" href="https://www.linkedin.com/in/johngabrielurbano">Message me on LinkedIn</a>
+      <a class="btn line" href="https://github.com/gaburbano">GitHub</a>
+      <a class="btn line" href="https://store.steampowered.com/app/5493880/">Home Sweet Bunker on Steam</a>
+    </div>
+    <figure>
+      <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/hero.jpg" aria-label="Gameplay from Home Sweet Bunker: a horde of monsters walks into a ring of fire in a suburban yard at night">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+      <figcaption>Home Sweet Bunker, my bunker building sim, running in real time. A horde meets the fire moat.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="games">
+  <div class="wrap">
+    <h2>Games I designed, built and shipped</h2>
+    <p class="intro">These are my own games. I did the design, the engineering, the tools and the releases.</p>
+
+    <article class="game">
+      <div class="shots">
+        <img class="main" src="assets/bunker-base.jpg" width="1600" height="900" alt="Home Sweet Bunker: level B2 of a bunker with living quarters, mess halls, a kitchen and food storage, and the build toolbar along the bottom">
+        <img class="inset" src="assets/bunker-gate.jpg" width="1200" height="675" loading="lazy" alt="The gate checkpoint screen: an intake form, vital signs and the Admit, Quarantine and Turn Away stamps">
+      </div>
+      <div class="words">
+        <span class="status">Out November 15, 2026</span>
+        <h3>Home Sweet Bunker: Bunker Tycoon</h3>
+        <p class="what">A bunker building and management sim. You check every survivor at the gate, grow a backyard shelter into a 10-level mega-bunker, and hold it through nights where each monster attacks a different system.</p>
+        <ul class="points">
+          <li>63 simulation systems in plain C#, separate from the engine, so tests run them without the game</li>
+          <li>The rules are data: 44 JSON files, checked when they load</li>
+          <li>1,148 automated tests. Some play whole in-game weeks from a fixed seed</li>
+          <li>Hordes in the thousands, and 300 people simulated in about 1 ms a tick</li>
+          <li>16 languages</li>
+        </ul>
+        <dl class="meta">
+          <div><dt>My part</dt><dd>Solo project: design, engineering, tools and release</dd></div>
+          <div><dt>Built with</dt><dd>Unity 6, C#, URP 2D, UI Toolkit, Steamworks</dd></div>
+        </dl>
+        <p class="more"><a href="https://store.steampowered.com/app/5493880/">See it on Steam</a></p>
+      </div>
+    </article>
+
+    <article class="game flip">
+      <div class="shots">
+        <img class="main" src="assets/cruise-sea.jpg" width="1600" height="900" loading="lazy" alt="Cruisopolis: a cruise ship under way at noon, seen from above, with a wake behind it on a painted blue sea">
+        <img class="inset" src="assets/cruise-lido.jpg" width="1200" height="675" loading="lazy" alt="The lido deck crowded with passengers, pools, hot tubs and striped umbrellas">
+      </div>
+      <div class="words">
+        <span class="status quiet">Coming soon on Steam</span>
+        <h3>Cruisopolis: Cruise Line Tycoon</h3>
+        <p class="what">A cruise line tycoon. You buy a ship, design it deck by deck, staff it, plan the route and keep a ship full of passengers happy at sea.</p>
+        <ul class="points">
+          <li>The sea is a custom HLSL shader: crossing waves, foam along the hull, a bow wave and a wake</li>
+          <li>Time-of-day lighting where the deck lamps light the people standing under them</li>
+          <li>Events made to be watched: a whale capsizing the ship, a kraken, pirates, lightning</li>
+        </ul>
+        <dl class="meta">
+          <div><dt>My part</dt><dd>Solo project: design, engineering, tools and release</dd></div>
+          <div><dt>Built with</dt><dd>Unity 6, C#, URP, HLSL</dd></div>
+        </dl>
+        <p class="more"><a href="https://store.steampowered.com/app/5476120/">See it on Steam</a></p>
+      </div>
+    </article>
+
+    <article class="game">
+      <div class="shots">
+        <img class="main" src="assets/pump-lot.jpg" width="1600" height="900" loading="lazy" alt="Pump City: a huge truck stop seen from above, with rows of parked trucks, a diner and rooms beside the highway">
+        <img class="inset" src="assets/pump-diner.jpg" width="1200" height="675" loading="lazy" alt="The diner at lunch: cooks at the grills and customers at booths on a checkered floor">
+      </div>
+      <div class="words">
+        <span class="status quiet">In development</span>
+        <h3>Pump City: Truck Stop Tycoon</h3>
+        <p class="what">A top-down truck stop building and management sim. You start with a roadside gas station and grow it into the world's largest truck stop.</p>
+        <ul class="points">
+          <li>The game where I worked out the process my later games follow: research, a written design, a tested simulation, then the store page</li>
+          <li>I wrote that process down as a playbook, and Cruisopolis and Home Sweet Bunker were built from it</li>
+        </ul>
+        <dl class="meta">
+          <div><dt>My part</dt><dd>Solo project: design, engineering and tools</dd></div>
+          <div><dt>Built with</dt><dd>Unity 6, C#, URP 2D</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <div class="earlier">
+      <h3>Earlier games on Steam</h3>
+      <div class="pair">
+        <article>
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/946670/header.jpg" width="460" height="215" loading="lazy" alt="School Owner cover art">
+          <div>
+            <span class="status">20,000+ wishlists</span>
+            <h4>School Owner</h4>
+            <p>A 3D school building sim. I built and shipped it on my own for Windows, macOS and Linux. <a href="https://store.steampowered.com/app/946670/School_Owner">See it on Steam</a></p>
+          </div>
+        </article>
+        <article>
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2102530/1dbf812abc72720819de537c43d0477f40d9d1a5/header.jpg" width="460" height="215" loading="lazy" alt="Mega Fast Food cover art">
+          <div>
+            <span class="status quiet">On Steam</span>
+            <h4>Mega Fast Food</h4>
+            <p>A 3D fast food restaurant sim, also built and shipped on my own. <a href="https://store.steampowered.com/app/2102530/">See it on Steam</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ai">
+  <div class="wrap">
+    <h2>AI agents that do real work</h2>
+    <p class="intro">I wrote code by hand for most of my career, and I build with Claude Code every day now. What matters is what the agents are allowed to do, and the checks around them.</p>
+
+    <div class="split">
+      <div>
+        <h3>Agents that play the real build</h3>
+        <p>Unit tests can't tell you that a new player gets stuck on day 2. So I built a QA harness that lets AI agents play the actual game through a virtual mouse and keyboard.</p>
+        <p>For the launch QA pass, five agents played as five kinds of players: the Impatient, the Newcomer, the Optimizer, the Breaker and the Marathoner. Round 1 came back with 95 issues. Each one had a screenshot, the full game state and the exact steps to reproduce it.</p>
+        <p>I fixed them, and the same five replayed their own issues on the new build. Round 2 confirmed 57 fixed and found 33 new ones.</p>
+      </div>
+      <div>
+        <div class="term" role="img" aria-label="Terminal commands an agent uses to launch the game, press buttons, read the screen and file an issue">
+<pre><span class="p">$</span> tools/build.sh qa
+<span class="p">$</span> play.py -p breaker launch --seed 4404 --size 1280x800
+<span class="p">$</span> play.py -p breaker press "NEW GAME"
+<span class="p">$</span> play.py -p breaker shot first-look   <span class="c"># the frame, as drawn</span>
+<span class="p">$</span> play.py -p breaker ui                <span class="c"># what can I click, and where</span>
+<span class="p">$</span> play.py -p breaker drag 600 400 700 450
+<span class="p">$</span> play.py -p breaker until 2 06:00     <span class="c"># wait for day 2, 6 AM</span>
+<span class="p">$</span> play.py -p breaker state             <span class="c"># stock, people, alerts, errors</span>
+<span class="p">$</span> play.py -p breaker issue --kind bug \
+    --title "A sleeper on a demolished cot sleeps on, drawn nowhere"</pre>
+        </div>
+        <p class="term-note">Commands from the harness. That last issue is real. The Breaker filed it in round 1 and it's fixed.</p>
+      </div>
+    </div>
+
+    <ol class="loop" aria-label="How the QA harness works">
+      <li><strong>The agent</strong><span>Claude Code reads the screenshot, decides what a player would do next, and files what looks wrong.</span></li>
+      <li><strong>A Python command line</strong><span>Launch, click, drag, type, wait for a game time, read the state. Every input is logged with its game time.</span></li>
+      <li><strong>The real game</strong><span>A QA build in Unity and C# with a local server. Each agent gets its own port, seed, saves and settings.</span></li>
+    </ol>
+    <p class="loop-note">Screenshots, the list of controls on screen, and the game state travel back the same way.</p>
+
+    <div class="trio">
+      <article>
+        <h3>Agents inside the editor</h3>
+        <p>Claude Code connects to the Unity Editor through MCP. It runs the tests, edits scenes and reads console errors on its own, so I don't have to copy errors into a chat window.</p>
+      </article>
+      <article>
+        <h3>16 languages, checked</h3>
+        <p>A Python tool extracts every player-facing string, translates what's missing in batches with a glossary, and the check fails on a missing string or a broken placeholder.</p>
+      </article>
+      <article>
+        <h3>An art pipeline</h3>
+        <p>Some of the art in my current games comes from an image model. A JSON spec holds my prompts and style guide, a script generates and cleans each asset, and I review and pick every piece.</p>
+      </article>
+    </div>
+
+    <div class="proof">
+      <div>
+        <h3>What it buys</h3>
+        <p>A week before launch I decided Home Sweet Bunker needed a late game where the bunker runs itself: vertical farms, rain tanks, a water plant and robots. I wrote the goal and the definition of done. The agents built it on a branch in two days, with art, sound and all 16 languages, and every test passed.</p>
+        <p>Then I raised the test bunker to 300 people and had an agent profile it. One stock-counting pass went from 14 ms to 0.09 ms.</p>
+      </div>
+      <div>
+        <h3>The rules I hold the agents to</h3>
+        <ul class="points">
+          <li>The tests pass before every commit</li>
+          <li>Secrets are never printed, written or committed</li>
+          <li>Anything public, like a Steam build or a store page, waits for my yes</li>
+          <li>I read every diff and play the build before I call anything done</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="clients">
+  <div class="wrap">
+    <h2>Client work</h2>
+    <p class="intro">Since 2022 I've worked remotely as a contractor for companies in the US and the UK.</p>
+    <ol class="jobs">
+      <li>
+        <span class="years">2025 to 2026</span>
+        <div><h3>Layers AI</h3><p class="role">Senior Full Stack Engineer. San Francisco, remote</p></div>
+        <p>I took iOS and Android games and apps from prototype to weekly store releases. I ported a live Unity game to React Native by rewriting its engine in TypeScript, with tests proving it matched the original, and moved the existing players over. I shipped 40+ builds in one month and built the subscriptions, paywall experiments and retention dashboards.</p>
+      </li>
+      <li>
+        <span class="years">2025 to 2026</span>
+        <div><h3>Podcrash</h3><p class="role">Senior Full Stack Engineer. England, remote</p></div>
+        <p>I worked on two unreleased Unity games with a team spread across time zones: a multiplayer tank battle game and a management sim about running a fish and chips shop.</p>
+      </li>
+      <li>
+        <span class="years">2024 to 2025</span>
+        <div><h3>Phygtl</h3><p class="role">Senior Unity Engineer. Palo Alto, remote</p></div>
+        <p>I helped build and ship Vyry, an AR social app on the App Store and Google Play. It's a Flutter app with Unity AR scenes inside it, on a Firebase backend. I built the AR quests, the Firestore data models, the Cloud Functions and the security rules, and worked directly with the CEO on product direction.</p>
+      </li>
+      <li>
+        <span class="years">2023 to 2024</span>
+        <div><h3>Flywater Games</h3><p class="role">Senior Unity Game Developer. Los Angeles, remote</p></div>
+        <p>I led development of two mobile games, World Wobble and Loteria Legends, and designed a reusable base that cut the setup time for later games.</p>
+      </li>
+      <li>
+        <span class="years">2022 to 2024</span>
+        <div><h3>Mega Cat Studios</h3><p class="role">Unity Game Developer. Pittsburgh, remote</p></div>
+        <p>I worked on the new Backyard Baseball for PC, PlayStation, Xbox and Nintendo Switch: gameplay, UI and input across its modes, and the lobby and match flow for local and online multiplayer. I also worked on WrestleQuest.</p>
+      </li>
+      <li>
+        <span class="years">2017 to 2019</span>
+        <div><h3>TORO Cloud</h3><p class="role">Software Engineer. Clark, Philippines</p></div>
+        <p>I built CRM systems for the sales and marketing teams, a single payment API in front of several payment providers, and automations for repetitive business operations.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="stack">
+  <div class="wrap">
+    <h2>What I work with</h2>
+    <dl class="stack">
+      <div><dt>Languages</dt><dd>C#, TypeScript, JavaScript, Python, Dart</dd></div>
+      <div><dt>Games and mobile</dt><dd>Unity, React Native and Expo, Flutter, Photon Fusion 2, Mirror</dd></div>
+      <div><dt>Web and backend</dt><dd>Node.js, Express, Next.js, Angular, PostgreSQL on Supabase, MongoDB, Firebase, REST APIs</dd></div>
+      <div><dt>AI</dt><dd>Claude Code with subagents and MCP, the OpenAI and Gemini APIs, the Codex CLI</dd></div>
+      <div><dt>Release and ops</dt><dd>GitHub Actions with self-hosted runners, App Store Connect and Google Play release scripts, Steamworks, Sentry, RevenueCat</dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Have a role or a project in mind?</h2>
+    <p>Message me on LinkedIn. I'm in the Philippines, I work remotely, and I'm used to teams in other time zones.</p>
+    <div class="actions">
+      <a class="btn solid" href="https://www.linkedin.com/in/johngabrielurbano">Message me on LinkedIn</a>
+      <a class="btn line" href="https://github.com/gaburbano">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">© 2026 John Gabriel Urbano</div>
+</footer>
+
+<script>
+  // People who ask for less motion get a still frame and their own play button.
+  (function () {
+    var v = document.getElementById('heroVideo');
+    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.controls = true;
+    }
+  })();
+</script>
+</body>
+</html>
